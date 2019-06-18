@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SlackHttpClientService } from './slack-http-client/slack-http-client.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormlyFieldsService } from './formly-fields/formly-fields.service';
+import { SlackHttpClientService } from './slack-http-client/slack-http-client.service';
 
 @NgModule({
   declarations: [],
   imports: [CommonModule, HttpClientModule],
-  providers: [SlackHttpClientService]
+providers: [SlackHttpClientService, FormlyFieldsService]
 })
 export class CoreModule {}
