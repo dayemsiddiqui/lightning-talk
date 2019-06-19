@@ -2,19 +2,34 @@ import { Component, OnInit } from '@angular/core';
 
 declare const $: any;
 declare interface RouteInfo {
-    path: string;
-    title: string;
-    icon: string;
-    class: string;
+  path: string;
+  title: string;
+  icon: string;
+  class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'Slack Notifications',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Talk Submissions',  icon:'content_paste', class: '' },
-    { path: '/typography', title: 'Scheduled Talks',  icon:'library_books', class: '' },
-    // { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    // { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    // { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
+  { path: '/dashboard', title: 'Dashboard', icon: 'dashboard', class: '' },
+  {
+    path: '/user-profile',
+    title: 'Slack Notifications',
+    icon: 'person',
+    class: ''
+  },
+  {
+    path: '/submissions',
+    title: 'Talk Submissions',
+    icon: 'content_paste',
+    class: ''
+  },
+  {
+    path: '/typography',
+    title: 'Scheduled Talks',
+    icon: 'library_books',
+    class: ''
+  },
+  // { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
+  // { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
+  // { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
 ];
 
 @Component({
@@ -25,15 +40,15 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
   isMobileMenu() {
-      if ($(window).width() > 991) {
-          return false;
-      }
-      return true;
-  };
+    if ($(window).width() > 991) {
+      return false;
+    }
+    return true;
+  }
 }
