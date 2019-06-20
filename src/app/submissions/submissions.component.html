@@ -19,7 +19,14 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let submission of submissions">
-                    <td>{{submission.title}}</td>
+                    <td>{{submission.created_at.toMillis() | date:'yyyy/MM/dd h:mm:ss a'}}</td>
+                    <td>{{submission.email}}</td>
+                    <td>{{submission.name}}</td>
+                    <td>{{submission.title | slice:0:6 }}...</td>
+                    <td>{{ submission.abstract | slice:0:6 }}...</td>
+                    <td>{{submission.slides_link}}</td>
+                    <td>{{submission.schedule.toMillis() | date:'yyyy/MM/dd h:mm:ss a'}}</td>
+                    <td>{{submission.video_link}}</td>
                   </tr>
                 </tbody>
               </table>

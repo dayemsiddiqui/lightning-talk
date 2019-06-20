@@ -3,10 +3,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormlyFieldsService } from './formly-fields/formly-fields.service';
 import { SlackHttpClientService } from './slack-http-client/slack-http-client.service';
+import { EllipsisPipe } from './ellipsis.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [EllipsisPipe],
   imports: [CommonModule, HttpClientModule],
-providers: [SlackHttpClientService, FormlyFieldsService]
+  providers: [SlackHttpClientService, FormlyFieldsService, EllipsisPipe]
 })
 export class CoreModule {}

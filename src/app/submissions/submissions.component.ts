@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Submission } from './submissions.interface';
+import { EllipsisPipe } from 'app/core/ellipsis.pipe';
+import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-submissions',
@@ -18,14 +21,18 @@ export class SubmissionsComponent implements OnInit {
     'Video Link'
   ];
 
-  submissions = [];
-  constructor(private db: AngularFirestore) {}
+  submissions: Submission[] = [];
+  constructor(
+    private db: AngularFirestore,
+    private ellipsisPipe: EllipsisPipe
+  ) {}
 
   ngOnInit() {
-    this.db.collection('submissions')
-    .valueChanges()
-    .subscribe(data => {
-      this.submissions = data;
-    })
+    this.db
+      .collection<Submission>('submissions')
+      .valueChanges()
+      .subscribe(data => {
+        this.submissions = data;
+      });
   }
 }
