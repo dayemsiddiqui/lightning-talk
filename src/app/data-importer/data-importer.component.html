@@ -1,0 +1,32 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Import Submissions</h4>
+            <p class="card-category">
+              Here you can import the csv file of form submissions
+            </p>
+          </div>
+          <div class="card-body">
+            <ngx-file-drop
+              dropZoneLabel="Drop files here"
+              (onFileDrop)="dropped($event)"
+              (onFileOver)="fileOver($event)"
+              (onFileLeave)="fileLeave($event)"
+            >
+              <ng-template let-openFileSelector="openFileSelector">
+                Optional custom content that replaces the the entire default
+                content.
+                <button type="button" (click)="openFileSelector()">
+                  Browse Files
+                </button>
+              </ng-template>
+            </ngx-file-drop>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,7 @@ declare interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
   { path: '/dashboard', title: 'Dashboard', icon: 'dashboard', class: '' },
   {
-    path: '/user-profile',
+    path: '/slack-notification',
     title: 'Slack Notifications',
     icon: 'person',
     class: ''
@@ -24,6 +24,12 @@ export const ROUTES: RouteInfo[] = [
   {
     path: '/typography',
     title: 'Scheduled Talks',
+    icon: 'library_books',
+    class: ''
+  },
+  {
+    path: '/data-importer',
+    title: 'Data Importer',
     icon: 'library_books',
     class: ''
   },
